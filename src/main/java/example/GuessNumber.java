@@ -10,19 +10,9 @@ public class GuessNumber {
     public String guess(int[] inputNumArr) {
         int sumA = this.getSumA(inputNumArr);   //sum of A
         int sumAB = this.getSumAB(inputNumArr); // sum of (A add B)
-
-        if (sumA == 4) {
-            return "4A0B";
-        }
-
-        if (sumAB == 0) {
-            return "0A0B";
-        }
         int sumB = sumAB - sumA;
-        String result = String.valueOf(sumA) + "A" +
+        return String.valueOf(sumA) + "A" +
                 String.valueOf(sumB) + "B";
-        return result;
-
     }
 
     public int getSumA(int[] inputNumArr){
