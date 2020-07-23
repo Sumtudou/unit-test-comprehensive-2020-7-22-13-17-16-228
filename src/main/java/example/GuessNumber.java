@@ -14,6 +14,7 @@ public class GuessNumber {
         if (sumA == 4) {
             return "4A0B";
         }
+
         if (sumAB == 0) {
             return "0A0B";
         }
