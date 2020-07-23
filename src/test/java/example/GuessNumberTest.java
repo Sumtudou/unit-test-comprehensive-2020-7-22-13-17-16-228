@@ -55,4 +55,16 @@ public class GuessNumberTest {
         assertEquals("0A2B", res);
     }
 
+    @Test
+    public void should_return_2A2B_when_guess_given_all_num_correct_value_but_some_position_wrong() {
+        //given
+        int[] answer = {1, 2, 3, 4};
+        int[] inputNumArr = {1, 2, 4, 3};
+        GuessNumber guessNumber = new GuessNumber(answer);
+        //when
+        String res = guessNumber.guess(inputNumArr);
+        //then
+        assertEquals("2A2B", res);
+    }
+
 }
