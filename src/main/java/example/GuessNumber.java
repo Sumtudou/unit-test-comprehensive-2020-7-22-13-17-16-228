@@ -17,11 +17,9 @@ public class GuessNumber {
         if (sumAB == 0) {
             return "0A0B";
         }
-
         int sumB = sumAB - sumA;
         String result = String.valueOf(sumA) + "A" +
                 String.valueOf(sumB) + "B";
-
         return result;
 
     }
