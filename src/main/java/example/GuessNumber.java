@@ -14,11 +14,16 @@ public class GuessNumber {
         if (sumA == 4) {
             return "4A0B";
         }
-
         if (sumAB == 0) {
             return "0A0B";
         }
-        return null;
+
+        int sumB = sumAB - sumA;
+        String result = String.valueOf(sumA) + "A" +
+                String.valueOf(sumB) + "B";
+
+        return result;
+
     }
 
     public int getSumA(int[] inputNumArr){
