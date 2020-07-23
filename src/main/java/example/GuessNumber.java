@@ -7,6 +7,18 @@ public class GuessNumber {
         this.answer = answer;
     }
 
+    GuessNumber(GenerateNumber generateNumber) {
+        this.answer = generateNumber.getAnswer();
+    }
+
+    public String getAnswer() {
+        String answerStr = "";
+        for(int i : answer){
+            answerStr+=String.valueOf(i)+" ";
+        }
+        return answerStr;
+    }
+
     public String guess(int[] inputNumArr) {
         int sumA = this.getSumA(inputNumArr);   //sum of A
         int sumAB = this.getSumAB(inputNumArr); // sum of (A add B)
@@ -15,7 +27,7 @@ public class GuessNumber {
                 String.valueOf(sumB) + "B";
     }
 
-    public int getSumA(int[] inputNumArr){
+    private int getSumA(int[] inputNumArr){
         int sumA = 0;
         for (int i = 0; i < inputNumArr.length; i++) {
             if (inputNumArr[i] == answer[i]) {
@@ -25,7 +37,7 @@ public class GuessNumber {
         return sumA;
     }
 
-    public  int getSumAB(int[] inputNumArr){
+    private  int getSumAB(int[] inputNumArr){
         int sumAB = 0;
         for (int inputNumItem : inputNumArr) {
             for (int answerItem : answer) {
