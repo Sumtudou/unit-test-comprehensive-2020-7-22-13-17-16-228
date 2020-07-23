@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class CheckInputLegal {
 
-    public static boolean isInputLegal(int[] inputArr) {
+    public  boolean isInputLegal(int[] inputArr) {
         if (inputArr.length != 4) {
             return false;
         }
