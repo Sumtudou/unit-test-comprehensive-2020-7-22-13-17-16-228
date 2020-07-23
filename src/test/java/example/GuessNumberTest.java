@@ -31,5 +31,17 @@ public class GuessNumberTest {
 
     }
 
+    @Test
+    public void should_return_2A0B_when_guess_given_some_num_correct_position_and_value_but_some_incorrect() {
+        //given
+        int[] answer = {1, 2, 3, 4};
+        int[] inputNumArr = {1, 2, 7, 8};
+        GuessNumber guessNumber = new GuessNumber(answer);
+        //when
+        String res = guessNumber.guess(inputNumArr);
+        //then
+        assertEquals("2A0B", res);
+
+    }
 
 }
