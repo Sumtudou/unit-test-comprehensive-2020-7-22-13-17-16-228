@@ -67,4 +67,16 @@ public class GuessNumberTest {
         assertEquals("2A2B", res);
     }
 
+    @Test
+    public void should_return_1A1B_when_guess_given_1829() {
+        //given
+        int[] answer = {1, 2, 3, 4};
+        int[] inputNumArr = {1, 8, 2, 9};
+        GuessNumber guessNumber = new GuessNumber(answer);
+        //when
+        String res = guessNumber.guess(inputNumArr);
+        //then
+        assertEquals("1A1B", res);
+    }
+
 }
