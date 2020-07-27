@@ -42,13 +42,19 @@ public class GuessNumber {
     private int getSumAB(int[] inputNumArr) {
         int sumAB = 0;
         for (int inputNumItem : inputNumArr) {
-            for (int answerItem : answer) {
-                if (answerItem == inputNumItem) {
-                    sumAB++;
-                    break;
-                }
+            if (isEqualWithAnswerItem(inputNumItem)) {
+                sumAB++;
             }
         }
         return sumAB;
+    }
+
+    private boolean isEqualWithAnswerItem(int inputNumItem) {
+        for (int answerItem : answer) {
+            if (answerItem == inputNumItem) {
+                return true;
+            }
+        }
+        return false;
     }
 }
