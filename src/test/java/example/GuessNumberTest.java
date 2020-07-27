@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GuessNumberTest {
     @Test
-    public void should_return_4A0B_when_guess_given_all_correct() {
+    public void should_return_4A0B_when_guess_given_1234() {
         //given
         int[] answer = {1, 2, 3, 4};
         int[] inputNumArr = {1, 2, 3, 4};
@@ -15,11 +15,10 @@ public class GuessNumberTest {
         String res = guessNumber.guess(inputNumArr);
         //then
         assertEquals("4A0B", res);
-
     }
 
     @Test
-    public void should_return_0A0B_when_guess_given_all_incorrect() {
+    public void should_return_0A0B_when_guess_given_5678() {
         //given
         int[] answer = {1, 2, 3, 4};
         int[] inputNumArr = {5, 6, 7, 8};
@@ -32,7 +31,7 @@ public class GuessNumberTest {
     }
 
     @Test
-    public void should_return_2A0B_when_guess_given_some_num_correct_position_and_value_but_some_incorrect() {
+    public void should_return_2A0B_when_guess_given_1278() {
         //given
         int[] answer = {1, 2, 3, 4};
         int[] inputNumArr = {1, 2, 7, 8};
@@ -44,7 +43,7 @@ public class GuessNumberTest {
     }
 
     @Test
-    public void should_return_0A2B_when_guess_given_some_num_wrong_position_correct_value_but_some_incorrect() {
+    public void should_return_0A2B_when_guess_given_3478() {
         //given
         int[] answer = {1, 2, 3, 4};
         int[] inputNumArr = {3, 4, 7, 8};
@@ -56,7 +55,7 @@ public class GuessNumberTest {
     }
 
     @Test
-    public void should_return_2A2B_when_guess_given_all_num_correct_value_but_some_position_wrong() {
+    public void should_return_2A2B_when_guess_given_1243() {
         //given
         int[] answer = {1, 2, 3, 4};
         int[] inputNumArr = {1, 2, 4, 3};

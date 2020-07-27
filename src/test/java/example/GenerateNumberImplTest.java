@@ -9,7 +9,41 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GenerateNumberImplTest {
     @Test
-    public void should_return_4_integer_array() {
+    public void should_return_true_when_generateNumber01() {
+        //given
+        GenerateNumberImpl generateNumberImpl = new GenerateNumberImpl();
+        //when
+        int[] answerArray = generateNumberImpl.getAnswer();
+        //then
+        boolean isTestPass = true;
+        for (int numItem : answerArray) {
+            if (numItem < 0 || numItem > 9){
+                isTestPass = false;
+            }
+        }
+        assertTrue(isTestPass);
+    }
+
+    @Test
+    public void should_return_true_when_generateNumber02() {
+        //given
+        GenerateNumberImpl generateNumberImpl = new GenerateNumberImpl();
+        //when
+        int[] answerArray = generateNumberImpl.getAnswer();
+        //then
+        boolean isTestPass = true;
+        Arrays.sort(answerArray);
+        for (int i = 0; i < answerArray.length - 1; i++) {
+            if (answerArray[i] == answerArray[i + 1]) {
+                isTestPass = false;
+            }
+        }
+        assertTrue(isTestPass);
+    }
+
+
+    @Test
+    public void should_return_true_when_generateNumber03() {
         //given
         GenerateNumberImpl generateNumberImpl = new GenerateNumberImpl();
         //when
@@ -27,11 +61,6 @@ public class GenerateNumberImplTest {
                 isTestPass = false;
             }
         }
-        if(isTestPass){
-            assertEquals(1, 1);
-        }else{
-            assertEquals(1, 2);
-        }
-
+        assertTrue(isTestPass);
     }
 }
