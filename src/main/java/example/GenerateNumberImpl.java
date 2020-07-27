@@ -9,17 +9,16 @@ public class GenerateNumberImpl implements GenerateNumber{
     public int[] getAnswer() {
         int[] answers = new int[4];
         Random random = new Random();
-        int index = 0;
-        for(;;){
+        int answerArrIndex = 0;
+        while(true){
             int num = random.nextInt(10);
             if(!contains(answers,num)){
-                answers[index++] = num;
+                answers[answerArrIndex++] = num;
             }
-            if(index == 4)
+            if(answerArrIndex == 4)
                 break;
         }
         return answers;
-
     }
     public static boolean contains(int[] arr, int target){
         for(int num:arr){
