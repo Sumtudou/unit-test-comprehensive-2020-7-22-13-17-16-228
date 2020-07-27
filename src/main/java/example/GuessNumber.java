@@ -1,5 +1,7 @@
 package example;
 
+import java.util.StringJoiner;
+
 public class GuessNumber {
     private int[] answer;
 
@@ -12,11 +14,11 @@ public class GuessNumber {
     }
 
     public String getAnswer() {
-        String answerStr = "";
+        StringJoiner stringJoiner = new StringJoiner(" ");
         for(int i : answer){
-            answerStr+=String.valueOf(i)+" ";
+            stringJoiner.add(String.valueOf(i));
         }
-        return answerStr;
+        return stringJoiner.toString();
     }
 
     public String guess(int[] inputNumArr) {
