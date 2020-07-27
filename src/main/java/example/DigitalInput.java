@@ -8,10 +8,9 @@ public class DigitalInput {
     public int[] getInputNumArr() {
         Scanner scanner = new Scanner(System.in);
         int[] inputNum = new int[4];
-        String inputStr = scanner.nextLine();
+        String inputStr = scanner.nextLine().trim();
         if (!isInputStrLegal(inputStr)) return null;
-
-        String[] splitStr = inputStr.split(" ");
+        String[] splitStr = inputStr.split("\\s+");
         if (splitStr.length == 4) {
             for (int i = 0; i < 4; i++) {
                 inputNum[i] = Integer.parseInt(splitStr[i]);
