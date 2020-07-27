@@ -15,7 +15,7 @@ public class GuessNumber {
 
     public String getAnswer() {
         StringJoiner stringJoiner = new StringJoiner(" ");
-        for(int i : answer){
+        for (int i : answer) {
             stringJoiner.add(String.valueOf(i));
         }
         return stringJoiner.toString();
@@ -29,7 +29,7 @@ public class GuessNumber {
                 String.valueOf(sumB) + "B";
     }
 
-    private int getSumA(int[] inputNumArr){
+    private int getSumA(int[] inputNumArr) {
         int sumA = 0;
         for (int i = 0; i < inputNumArr.length; i++) {
             if (inputNumArr[i] == answer[i]) {
@@ -39,7 +39,7 @@ public class GuessNumber {
         return sumA;
     }
 
-    private  int getSumAB(int[] inputNumArr){
+    private int getSumAB(int[] inputNumArr) {
         int sumAB = 0;
         for (int inputNumItem : inputNumArr) {
             for (int answerItem : answer) {
