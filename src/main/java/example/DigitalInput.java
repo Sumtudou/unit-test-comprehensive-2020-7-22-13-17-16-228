@@ -11,6 +11,7 @@ public class DigitalInput {
         String inputStr = scanner.nextLine().trim();
         if (!isInputStrLegal(inputStr)) return null;
         String[] splitStr = inputStr.split("\\s+");
+
         if (splitStr.length == 4) {
             for (int i = 0; i < 4; i++) {
                 inputNum[i] = Integer.parseInt(splitStr[i]);
@@ -41,9 +42,11 @@ public class DigitalInput {
                 return false;
             }
         }
-        Arrays.sort(inputArr);
-        for (int i = 0; i < inputArr.length - 1; i++) {
-            if (inputArr[i] == inputArr[i + 1]) {
+
+        int[] copyArr = Arrays.copyOfRange(inputArr,0,4);
+        Arrays.sort(copyArr);
+        for (int i = 0; i < copyArr.length - 1; i++) {
+            if (copyArr[i] == copyArr[i + 1]) {
                 return false;
             }
         }
