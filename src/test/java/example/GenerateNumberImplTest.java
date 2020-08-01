@@ -4,12 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GenerateNumberImplTest {
     @Test
-    public void should_return_true_when_generateNumber01() {
+    public void should_return_true_when_generateNumber_given_input_between_0_9() {
         //given
         GenerateNumberImpl generateNumberImpl = new GenerateNumberImpl();
         //when
@@ -25,7 +24,7 @@ public class GenerateNumberImplTest {
     }
 
     @Test
-    public void should_return_true_when_generateNumber02() {
+    public void should_return_true_when_generateNumber_given_input_number_not_repeat() {
         //given
         GenerateNumberImpl generateNumberImpl = new GenerateNumberImpl();
         //when
@@ -43,7 +42,7 @@ public class GenerateNumberImplTest {
 
 
     @Test
-    public void should_return_true_when_generateNumber03() {
+    public void should_return_true_when_generateNumber_given_input_between_0_9_and_not_repeat() {
         //given
         GenerateNumberImpl generateNumberImpl = new GenerateNumberImpl();
         //when
