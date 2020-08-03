@@ -1,7 +1,9 @@
 package example;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class DigitalInput {
 
@@ -16,7 +18,7 @@ public class DigitalInput {
             for (int i = 0; i < 4; i++) {
                 inputNum[i] = Integer.parseInt(splitStr[i]);
             }
-            if (isInputNumLegal(inputNum)) {
+            if (isInputInRange(inputNum) && isInputNotRepeat(inputNum)) {
                 return inputNum;
             }
         }
@@ -33,21 +35,22 @@ public class DigitalInput {
         return true;
     }
 
-    public boolean isInputNumLegal(int[] inputArr) {
+
+    public boolean isInputNotRepeat(int[] inputArr) {
+        Set<Integer> inputSet = new HashSet<>();
+        for (int i : inputArr) {
+            inputSet.add(i);
+        }
+        return inputSet.size() == 4;
+    }
+
+    private boolean isInputInRange(int[] inputArr) {
         if (inputArr.length != 4) {
-            return false;
+            return true;
         }
         for (int inputItem : inputArr) {
             if (inputItem < 0 || inputItem > 9) {
-                return false;
-            }
-        }
-
-        int[] copyArr = Arrays.copyOfRange(inputArr,0,4);
-        Arrays.sort(copyArr);
-        for (int i = 0; i < copyArr.length - 1; i++) {
-            if (copyArr[i] == copyArr[i + 1]) {
-                return false;
+                return true;
             }
         }
         return true;

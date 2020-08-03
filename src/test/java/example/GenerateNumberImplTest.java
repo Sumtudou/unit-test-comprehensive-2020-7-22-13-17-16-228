@@ -16,8 +16,9 @@ public class GenerateNumberImplTest {
         //then
         boolean isTestPass = true;
         for (int numItem : answerArray) {
-            if (numItem < 0 || numItem > 9){
+            if (numItem < 0 || numItem > 9) {
                 isTestPass = false;
+                break;
             }
         }
         assertTrue(isTestPass);
@@ -35,6 +36,7 @@ public class GenerateNumberImplTest {
         for (int i = 0; i < answerArray.length - 1; i++) {
             if (answerArray[i] == answerArray[i + 1]) {
                 isTestPass = false;
+                break;
             }
         }
         assertTrue(isTestPass);
